@@ -1,0 +1,37 @@
+{% extends "appRestaurant/base.html" %}
+
+{% load static %}
+
+{%block content %}
+
+    <section class="container" style="padding-top: 20px; padding-bottom: 50px;" >
+        <div>
+            <h4 style="text-align: center; padding-bottom: 50px;">POLLOS A LA BRASA</h4>
+        </div>
+        <div style="display: flex; flex-flow: row wrap; justify-content: space-around;">
+            <div class="card-product">
+                <img src="{%static 'appRestaurant/assets/img/pollo parrillero.png' %}" alt="Hamburguesa" height="300px">
+                <h4>1/4 Pollo a la brasa</h4>
+            </div>
+            <div class="card-text">
+                <h4>DESCRIPCIÓN</h4>
+                <P>1/4 POLLO + PAPAS FRITAS + 1 PALITO DE ANTICUCHO</P>
+                <P>+ 1 CHORIZO + ENSALADA CLÁSICA</P>
+                <br>
+                <h4>OBSERVACIONES DEL PRODUCTO</h4>
+                <input type="text" style="width: 400px;">
+                <br>
+                <br>
+                <p>CANTIDAD</p><button>-</button>
+                <button>+</button>
+                <br>
+                <h3>s/ 24.40</h3>
+            </div>
+            
+        </div>
+    </section>
+    <section class="container" style="padding-top: 20px; padding-bottom: 50px;text-align: center;">
+        <button class="btn btn-primary">AGREGAR AL CARRITO</button>
+    </section>
+
+{% endblock %}

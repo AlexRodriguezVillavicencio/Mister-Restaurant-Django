@@ -1,0 +1,38 @@
+{% extends "appRestaurant/base.html" %}
+
+{% load static %}
+
+{%block content %}
+
+    <section class="flayer-principal">
+        <div>
+            <img src="{%static 'appRestaurant/assets/img/principalflayer.jpg' %}" alt="">
+        </div>
+    </section>
+    <section class="container" style="padding-top: 20px; padding-bottom: 50px;" >
+        <div>
+            <h4 style="text-align: center; padding-bottom: 50px;">POLLOS A LA BRASA</h4>
+        </div>
+        <div style="display: flex; flex-flow: row wrap; justify-content: space-around;">
+                <a href="{%url 'menupollocuarto' %}" class="ms-item-container">
+                    <div class="card-product">
+                        <img src="{%static 'appRestaurant/assets/img/pollo parrillero.png' %}" alt="Pollo a la brasa" height="300px">
+                        <p>1/4 Pollo a la brasa</p>
+                    </div>      
+                </a>
+                <a href="#" class="ms-item-container">
+                    <div class="card-product">
+                        <img src="{%static 'appRestaurant/assets/img/papas fritas.png' %}" alt="Papas fritas" height="300px">
+                        <p>Porción de papas fritas</p>
+                    </div>      
+                </a>
+                <a href="#" class="ms-item-container">
+                    <div class="item-menu-card" >
+                        <img class="ms-item-image"  >
+                        <span class="ms-item-name"  ></span>
+                    </div>
+                    
+                </a>
+    </section>
+
+{% endblock %}

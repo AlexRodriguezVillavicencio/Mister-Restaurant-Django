@@ -20,6 +20,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'admin_interface',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -27,8 +28,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'appRestaurant',
-    'api'
+    'api',
+    'rest_framework',
+    'colorfield',
 ]
+
+X_FRAME_OPTIONS  =  'SAMEORIGIN' 
+SILENCED_SYSTEM_CHECKS  =  [ 'security.W019' ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -67,7 +73,7 @@ WSGI_APPLICATION = 'projectRestaurant.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME':'apirestaurant',
+        'NAME':'apirestproject',
         'USER': 'root',
         'PASSWORD': '',
         'HOST':'127.0.0.1',
@@ -98,7 +104,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es'
 
 TIME_ZONE = 'UTC'
 
@@ -113,6 +119,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+MEDIA_URL = '/appRestaurant/static/appRestaurant/assets/img/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'img')
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 

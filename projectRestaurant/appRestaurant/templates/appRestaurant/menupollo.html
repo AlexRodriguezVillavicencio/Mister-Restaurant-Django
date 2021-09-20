@@ -10,33 +10,23 @@
         </div>
     </section>
     <section class="container" style="padding-top: 20px; padding-bottom: 50px;" >
+
         <div>
             <h4 style="text-align: center; padding-bottom: 50px;">POLLOS A LA BRASA</h4>
         </div>
+
         <div style="display: flex; flex-flow: row wrap; justify-content: space-around;">
                 
             
+            {% for a in producto %}
                 <a href="{%url 'menupollocuarto' %}" class="ms-item-container">
                     <div class="card-product">
-                        {% for a in producto %}
-                        <img src="{{a.imagen}}" alt="#" height="300px">
+                        <img src="{{a.imagen.url}}" alt="#" height="300px">
                         <p>{{a.nombre}}</p>
-                        {% endfor %}
                     </div>      
                 </a>
-                <!-- <a href="#" class="ms-item-container">
-                    <div class="card-product">
-                        <img src="{%static 'appRestaurant/assets/img/papas fritas.png' %}" alt="Papas fritas" height="300px">
-                        <p>Porción de papas fritas</p>
-                    </div>      
-                </a> -->
-                <a href="#" class="ms-item-container">
-                    <div class="item-menu-card" >
-                        <img class="ms-item-image"  >
-                        <span class="ms-item-name"  ></span>
-                    </div>
-                    
-                </a>
+            {% endfor %}
+
     </section>
 
 {% endblock %}

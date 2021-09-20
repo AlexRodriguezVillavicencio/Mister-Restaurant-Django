@@ -13,14 +13,14 @@
             <h4 style="text-align: center; padding-bottom: 50px;">PROMOCIONES</h4>
         </div>
         <div style="display: flex; flex-flow: row wrap; justify-content: space-around;">
-            <div class="card-product">
-                <img src="{%static 'appRestaurant/assets/img/hamburguesa.png' %}" alt="Hamburguesa" height="300px">
-                <p>Triple Burger</p>
-            </div>
-            <div class="card-product">
-                <img src="{%static 'appRestaurant/assets/img/parrilla.png' %}" alt="Parrillas" height="300px">
-                <p>El parrillero familiar</p>
-            </div>
+            {% for a in promociones %}
+            <a href="#" class="ms-item-container">
+                <div class="card-product" style="width: 500px; margin-bottom: 50px;">
+                    <img src="{{a.imagen.url}}" alt="Hamburguesa" style="max-width:400px; height: 250px;">
+                    <p>{{a.nombre}}</p>
+                </div>
+            </a>
+            {% endfor %}
         </div>
     </section>
 

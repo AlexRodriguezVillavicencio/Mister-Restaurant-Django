@@ -48,6 +48,25 @@ class Cliente(models.Model):
 
 class Categoria(models.Model):
     nombre = models.CharField(max_length=30)
+    imagen = models.ImageField(upload_to='img',blank=True,null=True)
+
+    def __str__(self):
+        return self.nombre
+
+
+
+class Promociones(models.Model):
+    nombre = models.CharField(max_length=30)
+    precio = models.DecimalField (max_digits=6, decimal_places=2)
+    contenido = models.CharField('Contenido del producto',max_length=255)
+    imagen = models.ImageField(upload_to='img',blank=True,null=True)
+      
+    class Meta:
+        verbose_name = 'Promociones'
+        verbose_name_plural = 'Promociones'
+
+    def __str__(self):
+        return self.nombre
 
 class Producto(models.Model):
     ID_cod = models.BigAutoField(primary_key=True)
@@ -79,6 +98,9 @@ class Pedido(models.Model):
      local = models.ForeignKey(Local, on_delete=models.RESTRICT)
      direccion = models.OneToOneField(Direccion, on_delete=models.RESTRICT)
      coordenada = models.OneToOneField(Coordenada , on_delete=models.RESTRICT)
+     producto = models.ForeignKey(Producto , on_delete=models.RESTRICT, null=True)
+     promociones = models.ForeignKey(Promociones , on_delete=models.RESTRICT, null=True)
+
 
     
 
